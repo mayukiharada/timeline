@@ -1,0 +1,33 @@
+<div class="login">
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h2><div class="logo02"></div>TIMENOTE</h2>
+
+<div class="">
+  <%= button_to "初めての方はこちら", { :controller => "devise/registrations", :action => "new"}, class: "btn btn-dark", :method => :get %>
+</div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス",size: 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード",size: 30  %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :パスワードを記憶する %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "ログイン", class: "btn btn-dark" %>
+  </div>
+
+<% end %>
+
+<%= render "users/shared/links" %>
+
+</div>

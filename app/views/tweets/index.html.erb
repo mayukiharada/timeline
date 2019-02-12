@@ -1,0 +1,9 @@
+<% @tweets.each do |t| %>
+  <%= t.year %>
+  <%= t.body %>
+  <%= t.inform %>
+  <%# <%= t.image_name %>
+  <%= image_tag t.image_name.to_s %>
+<% end %>
+​
+<li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>

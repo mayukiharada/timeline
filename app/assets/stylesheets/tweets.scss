@@ -1,0 +1,98 @@
+// Place all the styles related to the hello controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.timeline {
+  margin: 0px auto;
+  max-width: 40em;
+  overflow:hidden;
+  height: auto;
+  position: relative;
+  padding:0px;
+  list-style-type:none;
+  background: image-url('line.png');
+  background-repeat: repeat-y;
+  background-position: 50% 0;
+
+  &:nth-child(2n):after {
+    right: -5%;
+    left: auto;
+  }
+}
+
+.year {
+  background: #505050;
+  font-size: 3em;
+  max-width: 4em;
+  color: white;
+  border-radius: 30% / 100%;
+  text-align: center;
+  margin: 1em auto 2em;
+  clear: both;
+
+  &:first-of-type {
+    margin-top: 0 !important;
+  }
+}
+
+.event {
+    position:relative;
+    text-align:center;
+    float: right;
+    clear: right;
+    width: 43%;
+    margin: 1em 2%;
+
+    border-radius: 5px;
+    list-style-type: none;
+    display: block;
+    padding: .4em;
+    background: white;
+    z-index: 15;
+    color: #4d4d4d;
+    border: 1px solid #9d9d9d;
+    text-decoration: none;
+
+  @media all and (max-width: 600px) {
+        width: 85%;
+  }
+
+  &.offset-first {
+        margin-top: -1.5em!important;
+  }
+
+  img {
+      margin-top: 10px;
+      max-width: 100%;
+  }
+
+
+
+  &:nth-of-type(2n) {
+     float: left;
+     clear: left;
+     @media all and(min-width:600px){
+          margin-top:2em;
+        }
+   }
+
+  &:after {
+    @media all and (min-width: 650px) {
+      display: block;
+      content: ' ';
+      height: 7px;
+      width: 7px;
+      background: #9d9d9d;
+      border-radius: 50%;
+      position:absolute;
+      left: -5%;
+      top: 1.5em;
+      border: 2px solid white;
+    }
+  }
+
+  &:nth-child(2n):after {
+    right: -5%;
+    /* reset the standard declaration I defined before*/
+    left: auto;
+  }
+}

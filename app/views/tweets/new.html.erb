@@ -1,0 +1,30 @@
+<%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
+<form action="/" method="post">
+ <div class="field">
+   <%= f.label :日時 %>
+   <br><%= f.text_field :year,size: 140 %>
+ </div>
+
+ <div class="field">
+   <%= f.label :文字 %>
+   <br><%= f.text_field :body,size: 140 %>
+ </div>
+
+ <div class="field">
+   <%= f.label :画像 %>
+   <br><%= f.label :image %>
+   　　<%= f.file_field :image_name %>
+ </div>
+
+ <div class="field">
+   <%= f.label :説明 %>
+   <br><%= f.text_field :inform,size: 140 %>
+ </div>
+
+
+
+ <div class="action">
+   <%= f.submit %>
+ </div>
+ </form>
+<% end %>
