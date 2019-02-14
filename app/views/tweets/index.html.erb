@@ -3,13 +3,13 @@
 
 <% @tweets.each do |t| %>
 
-<div class="content">
+<div class="contents">
 	<div class="inform"><%= t.body %><br><%= t.inform %></div>
 	<div class="year"><%= t.year %></div>
 	<div class="border"></div>
 	<div class="image_name">  <%# <%= t.image_name %>
   <%= image_tag t.image_name.to_s, :size =>'300x275' %></div>
-	</div>
+</div>
 
 <% end %>
 ​

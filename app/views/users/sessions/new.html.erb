@@ -3,7 +3,7 @@
   <h2><div class="logo02"></div>TIMENOTE</h2>
 
 <div class="">
-  <%= button_to "初めての方はこちら", { :controller => "devise/registrations", :action => "new"}, class: "btn btn-dark", :method => :get %>
+  <%= button_to "始めての方はこちらから", { :controller => "devise/registrations", :action => "new"}, class: "btn btn-dark", :method => :get %>
 </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
