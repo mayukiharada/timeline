@@ -1,0 +1,7 @@
+<% @pages.each do |t| %>
+  <div>
+    <%= link_to '新規作成', "/tweets/#{t.id}/new"%>
+    <%= t.name %>
+
+  </div>
+<% end %>

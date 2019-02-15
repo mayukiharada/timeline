@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
 #   def configure_permitted_parameters
 #    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
 #   end
+
+before_action :set_current_page
+
+  def set_current_page
+    @current_page = Page.find_by(id: session[:page_id])
+  end
 end

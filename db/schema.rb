@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_10_070920) do
+ActiveRecord::Schema.define(version: 2019_02_15_110914) do
+
+  create_table "pages", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "people", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_02_10_070920) do
     t.text "inform"
     t.text "year"
     t.string "image_name"
+    t.integer "page_id"
   end
 
   create_table "users", force: :cascade do |t|

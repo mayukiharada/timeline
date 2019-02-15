@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  root to:"tweets#index"
+  root to:"pages#index"
   devise_for :users
   resources :tweets
+  resources :pages
 
-  get 'timeline/index' => 'timeline#index'
+
   get 'tweets/index' => 'tweets#index'
   get 'hello/index' => 'hello#index'
   get 'hello/link' => 'hello#link'
+
+  get "tweets/:id/new" => "tweets#new"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 

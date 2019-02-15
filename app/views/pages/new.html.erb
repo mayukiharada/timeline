@@ -1,0 +1,14 @@
+<%= form_for(@page, :url => { controller:'pages', action:'create'})do |f| %>
+<form action="/" method="post">
+
+ <div class="field">
+   <%= f.label :タイムライン %>
+   <br><%= f.text_field :name,size: 140 %>
+ </div>
+
+ <div class="action">
+   <%= f.submit %>
+ </div>
+ </form>
+
+ <% end %>

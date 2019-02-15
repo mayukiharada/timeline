@@ -8,12 +8,10 @@ class TweetsController < ApplicationController
 
   def new
     @tweet = Tweet.new
- end
+  end
 
 def create
- @tweet = Tweet.new(
-tweet_params
- )
+ @tweet = Tweet.new(tweet_params)
 
 
  #新しいTweetの保存に成功した場合
@@ -31,6 +29,6 @@ end
 private
 #セキュリティのため、許可した:bodyというデータだけ取ってくるようにする
 def tweet_params
- params.require(:tweet).permit(:year, :body, :inform, :image_name)
+ params.require(:tweet).permit(:year, :body, :inform, :image_name, :page_id)
 end
 end
