@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
-  root to:"pages#index"
-  devise_for :users
-  resources :tweets
-  resources :pages
-
-
-  get 'tweets/index' => 'tweets#index'
   get 'hello/index' => 'hello#index'
   get 'hello/link' => 'hello#link'
+  root to:"pages#index"
+devise_for :users
+#  resources :tweets
+#  resources :pages
 
-  get "tweets/:id/new" => "tweets#new"
+  resources :pages do
+    resources :tweets
+  end
+end
+
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
@@ -21,4 +24,3 @@ Rails.application.routes.draw do
   # post 'tweets/new' => 'tweets#create'
   # #投稿一覧
   # get 'tweets/index' => 'tweets#index'
-end

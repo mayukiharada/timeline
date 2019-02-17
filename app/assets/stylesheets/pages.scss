@@ -1,3 +1,131 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a{
+  text-decoration: none;
+}
+
+/*left*/
+.user{
+  width: 300px;
+  height: 100%;
+  background: white;
+  float: left;
+}
+
+.user_right{
+  width: auto;
+  height: auto;
+  padding-top: 50px;
+  display: flex;
+flex-basis: auto;
+}
+
+.user li{
+  list-style: none;
+}
+
+.user_icon{
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+.icon_wrapper{
+  position: relative;
+  padding: 50px 50px 0 50px;
+}
+
+.user_name{
+  display: inline-block;
+  width: 120px;
+  height: auto;
+  font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  top:75;
+  left: 135px;
+}
+
+.new_button{
+  margin: 0 50px;
+}
+
+.user_info li{
+  display: inline-block;
+  width: 97px;
+  height: auto;
+  line-height: 25px;
+}
+
+.user_info li img{
+  margin-right: 5px;
+}
+
+.user_info{
+  padding: 30px 50px;
+  margin: 0;
+}
+
+.user_navigations{
+  margin-top: 50px;
+  padding: 0;
+}
+
+.user_navigations li{
+  width: 300px;
+  height: 65px;
+  line-height: 65px;
+  padding-left: 50px;
+}
+
+.user_navigations li:hover:before {
+    background-color: #6FBC92; /* 線色 */
+    border-radius: 5px; /* 線幅の半分 */
+    content: "";
+    display: inline-block;
+    height: 65px; /* 線の長さ */
+    margin-right: 10px; /* 線右の余白 */
+    vertical-align: middle;
+    width: 16px;
+    position: absolute;
+    left: -8px;
+}
+
+.user_link{
+  margin-top: 100px;
+  padding-left: 50px;
+  line-height: 30px;
+}
+
+
+/*right*/
+.tytle{
+  position: relative;
+  padding-left: 25px;
+}
+
+.tytle:before {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px rgb(119, 195, 223);
+}
+
+.tytle:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px rgb(119, 195, 223);
+}

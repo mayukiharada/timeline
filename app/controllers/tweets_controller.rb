@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
 
 def create
  @tweet = Tweet.new(tweet_params)
-
+ @tweet.page_id = params[:page_id]
 
  #新しいTweetの保存に成功した場合
  if @tweet.save

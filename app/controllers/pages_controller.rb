@@ -10,7 +10,6 @@ class PagesController < ApplicationController
 
   def create
   @page = Page.new(page_params)
-
   #現在ログインしているUserのidをTweetのuser_idという部分にセット
   @page.user_id = current_user.id
 

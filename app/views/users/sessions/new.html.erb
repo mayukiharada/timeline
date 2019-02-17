@@ -1,9 +1,10 @@
 <div class="login">
 
-  <h2><div class="logo02"></div>TIMENOTE</h2>
+  <h2><div class="logo02"></div>
+    <div class="logo_text">TIMENOTE</div></h2>
 
 <div class="">
-  <%= button_to "始めての方はこちらから", { :controller => "devise/registrations", :action => "new"}, class: "btn btn-dark", :method => :get %>
+  <%= button_to "始めての方はこちらから", { :controller => "devise/registrations", :action => "new"}, class: "btn btn-dark btn-block", :method => :get %>
 </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,7 +24,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "ログイン", class: "btn btn-dark" %>
+    <%= f.submit "ログイン", class: "btn btn-dark btn-block" %>
   </div>
 
 <% end %>

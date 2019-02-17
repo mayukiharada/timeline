@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   #Page Start
   #アソシエーション(1:多)
-  has_many :Page
+  has_many :Pages
   #Page End
 
   # Include default devise modules. Others available are:
