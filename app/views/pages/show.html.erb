@@ -1,0 +1,20 @@
+<div class="content_wrapper">
+
+
+<% @page.tweets.each do |t| %>
+
+<div class="contents">
+	<div class="inform"><%= t.body %><br><%= t.inform %></div>
+	<div class="year"><%= t.year %></div>
+	<div class="border"></div>
+	<div class="image_name">  <%# <%= t.image_name %>
+  <%= image_tag t.image_name.to_s, :size =>'300x275' %></div>
+</div>
+
+<% end %>
+​
+
+</div>
+
+
+<li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>

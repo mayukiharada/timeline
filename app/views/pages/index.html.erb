@@ -2,43 +2,53 @@
 <div class="user">
   <div class="icon_wrapper">
     <% if user_signed_in? %>
-  <div class="user_icon"></div>
+  <div class="user_icon">name</div>
   <div class="user_name"><%= current_user.name %></div>
   <% end %>
   </div>
+
   <ul class="user_info">
     <li><%= image_tag 'star.png', :size =>'14x14' %>フォロー</li>
     <li><%= image_tag 'star.png', :size =>'14x14' %>フォロワ</li>
     <li><%= image_tag 'heart.png', :size =>'14x14' %>いいね</li>
     <li><%= image_tag 'star.png', :size =>'14x14' %>ブクマ</li>
+
+    <li><%= link_to 'プロフィール編集', profile_edit_path %></li>
   </ul>
   <div class="new_button">
-    <%= link_to '新規作成', hello_index_path, class: "btn btn-dark btn-block" %>
+    <%= link_to '新規作成', "/pages/new", class: "btn btn-dark btn-block primary_btn" %>
   </div>
   <ul class="user_navigations">
     <li><a href="#">ホーム</a></li>
     <li><a href="#">みんなの作品</a></li>
     <li><a href="#">お気に入り</a></li>
   </ul>
-  <ul class="user_link">
-    <li><a href="#">TIMENOTEでできること</a></li>
-    <li><a href="#">よくある質問</a></li>
-    <li><a href="#">プロフィール編集</a></li>
-    <li><a href="#">TIMENOTEの感想を書く</a></li>
-  </ul>
 </div>
 
 <div class="user_right">
 <div class="mine">
-  <div class="tytle">
-    作ったもの
-  </div>
+  <div class="tytle">作ったもの</div>
+  <div class="tytle">お気に入り</div>
+  <div class="tytle">みんなの作品</div>
+  <div class="mine_contents">
 <% @pages.each do |t| %>
   <div class="mine_post">
-    <%= link_to '新規作成', "/pages/#{t.id}/tweets/new"%>
+    <%= link_to '編集', "/pages/#{t.id}/tweets/new"%>
     <%= t.name %>
   </div>
 <% end %>
+  </div>
+</div>
+
+<div class="everyone">
+  
 </div>
 
 </div>
+
+
+<ul class="footer">
+  <li><a href="#">TIMENOTEでできること</a></li>
+  <li><a href="#">よくある質問</a></li>
+  <li><a href="#">TIMENOTEの感想を書く</a></li>
+</ul>

@@ -8,21 +8,44 @@ class PagesController < ApplicationController
     @page = Page.new
   end
 
-  def create
-  @page = Page.new(page_params)
-  #現在ログインしているUserのidをTweetのuser_idという部分にセット
-  @page.user_id = current_user.id
-
-  #新しいTweetの保存に成功した場合
-  if @page.save
-    #index.html.erbにページが移る
-    redirect_to action: "index"
-  #新しいTweetの保存に失敗した場合
-  else
-    #もう一回投稿画面へ
-    redirect_to action: "new"
+  def show
+    @page = Page.find_by(id: params[:id])
   end
-end
+
+  def create
+    @page = Page.new(page_params)
+    #現在ログインしているUserのidをTweetのuser_idという部分にセット
+    @page.user_id = current_user.id
+
+    #新しいTweetの保存に成功した場合
+    if @page.save
+      #index.html.erbにページが移る
+      redirect_to action: "index"
+    #新しいTweetの保存に失敗した場合
+    else
+      #もう一回投稿画面へ
+      redirect_to action: "new"
+    end
+  end
+
+  def profile_edit
+
+  end
+
+  def profile_update
+    current_user.assign_attributes(account_update_params)
+    if current_user.save
+	  redirect_to my_page_path, notice: 'プロフィールを更新しました'
+    else
+      render "profile_edit"
+    end
+  end
+
+  protected
+
+  def configure_account_update_params
+   devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+  end
 
 def page_params
  params.require(:page).permit(:name, :user_id)

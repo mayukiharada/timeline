@@ -3,6 +3,7 @@ class TweetsController < ApplicationController
     before_action :authenticate_user!
 
   def index
+    # 有効な全記事を取得してきています
     @tweets = Tweet.all
   end
 

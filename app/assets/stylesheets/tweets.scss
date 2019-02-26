@@ -2,6 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*共通*/
+.header{
+	background-color: #6FBC92;
+	width: 100%;
+	height: 50px;
+	clear: both;
+	vertical-align: middle;
+}
+
+.header_left{
+	float: left;
+}
+
+.header_right{
+	float: right;
+}
+
+.header li{
+	display: inline-block;
+	line-height: 50px;
+}
+
+/*tweets/new*/
+
+/*tweets/index*/
 .content_wrapper{
 	display: flex;
 }

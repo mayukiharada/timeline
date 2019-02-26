@@ -2,13 +2,18 @@ Rails.application.routes.draw do
   get 'hello/index' => 'hello#index'
   get 'hello/link' => 'hello#link'
   root to:"pages#index"
-devise_for :users
+  devise_for :users
 #  resources :tweets
 #  resources :pages
 
   resources :pages do
     resources :tweets
   end
+
+  devise_scope :user do
+  get 'profile_edit', to: 'users/registrations#profile_edit', as: 'profile_edit'
+  patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
+end
 end
 
 

@@ -8,4 +8,8 @@ class Page < ApplicationRecord
   #アソシエーション(1:多)
   has_many :tweets
   #Tweet End
+
+  def tweets
+      return Tweet.where(page_id: self.id)
+  end
 end

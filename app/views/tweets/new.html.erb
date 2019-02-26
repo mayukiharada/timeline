@@ -1,13 +1,26 @@
+<div class="header">
+  <div class="header_left"><ul>
+    <li>←戻る</li>
+  </ul></div>
+  <div class="header_right">
+    <ul>
+      <li>共有</li>
+      <li>公開</li>
+      <li>デザインの変更</li>
+    </ul>
+  </div>
+</div>
+
 <%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
 <form action="/" method="post">
  <div class="field">
    <%= f.label :日時 %>
-   <br><%= f.text_field :year,size: 140 %>
+   <br><%= f.text_field :year,size: 70 %>
  </div>
 
  <div class="field">
    <%= f.label :文字 %>
-   <br><%= f.text_field :body,size: 140 %>
+   <br><%= f.text_field :body,size: 70 %>
  </div>
 
  <div class="field">
@@ -18,13 +31,13 @@
 
  <div class="field">
    <%= f.label :説明 %>
-   <br><%= f.text_field :inform,size: 140 %>
+   <br><%= f.text_field :inform,size: 70 %>
  </div>
 
 
 
  <div class="action">
-   <%= f.submit %>
+   <%= f.submit "+追加", class: "btn btn-dark" %>
  </div>
  </form>
 <% end %>

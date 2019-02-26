@@ -19,7 +19,7 @@ a{
   height: auto;
   padding-top: 50px;
   display: flex;
-flex-basis: auto;
+  flex-basis: auto;
 }
 
 .user li{
@@ -30,7 +30,7 @@ flex-basis: auto;
   display: inline-block;
   width: 70px;
   height: 70px;
-  background-color: yellow;
+  background-color: #D8D8D8;
   border-radius: 50%;
 }
 
@@ -79,16 +79,16 @@ flex-basis: auto;
 .user_navigations li{
   width: 300px;
   height: 65px;
-  line-height: 65px;
+  line-height: 60px;
   padding-left: 50px;
 }
 
 .user_navigations li:hover:before {
     background-color: #6FBC92; /* 線色 */
-    border-radius: 5px; /* 線幅の半分 */
+    border-radius: 10px; /* 線幅の半分 */
     content: "";
     display: inline-block;
-    height: 65px; /* 線の長さ */
+    height: 60px; /* 線の長さ */
     margin-right: 10px; /* 線右の余白 */
     vertical-align: middle;
     width: 16px;
@@ -96,17 +96,12 @@ flex-basis: auto;
     left: -8px;
 }
 
-.user_link{
-  margin-top: 100px;
-  padding-left: 50px;
-  line-height: 30px;
-}
-
-
 /*right*/
 .tytle{
   position: relative;
   padding-left: 25px;
+  display: inline-block;
+  margin-left: 12px;
 }
 
 .tytle:before {
@@ -118,7 +113,7 @@ flex-basis: auto;
   height: 0;
   border: none;
   border-left: solid 15px transparent;
-  border-bottom: solid 15px rgb(119, 195, 223);
+  border-bottom: solid 15px #333;
 }
 
 .tytle:after {
@@ -127,5 +122,37 @@ flex-basis: auto;
   bottom: -3px;
   left: 10px;
   width: 100%;
-  border-bottom: solid 3px rgb(119, 195, 223);
+  border-bottom: solid 3px #333;
+}
+
+.mine{
+  width: 100%;
+  height: auto;
+}
+
+.mine_post{
+  background: #D8D8D8;
+  display: inline-block;
+  width: 46%;
+  height: 200px;
+  margin: 0.5em;
+  border-radius: 10px;
+  border-radius: 16px;
+  border: 1px solid #979797;
+}
+
+.mine_contents{
+  margin-top: 15px;
+}
+
+.clear{
+  clear: both;
+}
+
+/*footer*/
+
+.footer{
+  margin-top: 100px;
+  padding-left: 50px;
+  line-height: 30px;
 }
