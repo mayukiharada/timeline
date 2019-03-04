@@ -18,7 +18,7 @@ def create
  #新しいTweetの保存に成功した場合
  if @tweet.save
    #index.html.erbにページが移る
-   redirect_to action: "index"
+   redirect_to "/pages/#{params[:page_id]}"
  #新しいTweetの保存に失敗した場合
  else
    #もう一回投稿画面へ

@@ -1,8 +1,38 @@
-<div class="content_wrapper">
 
+<div class="header">
+  <div class="header_left"><ul>
+    <li>←戻る</li>
+  </ul></div>
+  <div class="header_right">
+    <ul>
+      <li>共有</li>
+      <li>公開</li>
+      <li>デザインの変更</li>
+    </ul>
+  </div>
+</div>
 
+<div class="content2_wrapper">
+	<h1 class="tytle2 image_name2"></h1>
 <% @tweets.each do |t| %>
+		<div class="content">
+			<div class="box01">
+				<div class="image_name2"><%# <%= t.image_name %>
+			  <%= image_tag t.image_name.to_s, :size =>'300x275' %></div>
+				<div class="text2"><%= t.body %></div>
+				<div class="year2">.<%= t.year %></div>
+				<div class="inform2"><%= t.inform %></div>
+			</div>
+		</div>
+<% end %>
+</div>
 
+<li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
+
+
+<div class="content_wrapper">
+<% @tweets.each do |t| %>
+<div class="wrapper">
 <div class="contents">
 	<div class="inform"><%= t.body %><br><%= t.inform %></div>
 	<div class="year"><%= t.year %></div>
@@ -10,11 +40,6 @@
 	<div class="image_name">  <%# <%= t.image_name %>
   <%= image_tag t.image_name.to_s, :size =>'300x275' %></div>
 </div>
-
-<% end %>
-​
-
 </div>
-
-
-<li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
+<% end %>
+</div>-
