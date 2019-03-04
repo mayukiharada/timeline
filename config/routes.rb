@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'hello/index' => 'hello#index'
   get 'hello/link' => 'hello#link'
-  root to:"pages#index"
+  root to:"hello#index"
   devise_for :users
 #  resources :tweets
 #  resources :pages
