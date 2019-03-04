@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
 before_action :set_current_page
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
+before_action :configure_permitted_parameters, if: :devise_controller?
 
 
   def set_current_page
@@ -29,5 +29,17 @@ before_action :set_current_page
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    end
+
+    # サインイン後のリダイレクト先をマイページへ
+    def after_sign_in_path_for(resource)
+        flash[:notice] = "ログインに成功しました" #　 <-任意で
+        pages_path(current_user.id)  #　指定したいパスに変更
+    end
+
+    # サインアウト後のリダイレクト先をトップページへ
+    def after_sign_out_path_for(resource)
+        flash[:alert] = "ログアウトしました"
+        root_path
     end
 end
