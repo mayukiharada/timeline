@@ -2,7 +2,7 @@
 <div class="user">
   <div class="icon_wrapper">
     <% if user_signed_in? %>
-  <div class="user_icon">name</div>
+  <div class="user_icon"></div>
   <div class="user_name"><%= current_user.name %></div>
   <% end %>
   </div>
@@ -12,8 +12,6 @@
     <li><%= image_tag 'star.png', :size =>'14x14' %>フォロワ</li>
     <li><%= image_tag 'heart.png', :size =>'14x14' %>いいね</li>
     <li><%= image_tag 'star.png', :size =>'14x14' %>ブクマ</li>
-
-    <li><%= link_to 'プロフィール編集', profile_edit_path %></li>
   </ul>
   <div class="new_button">
     <%= link_to '新規作成', "/pages/new", class: "btn btn-dark btn-block primary_btn" %>
@@ -23,27 +21,25 @@
     <li><a href="#">みんなの作品</a></li>
     <li><a href="#">お気に入り</a></li>
   </ul>
+  <ul class="footer">
+    <li><a href="#">TIMENOTEの感想を書く</a></li>
+    <li><%= link_to 'プロフィール編集', profile_edit_path %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+  </ul>
 </div>
 
 <div class="user_right">
 <div class="mine">
-  <div class="tytle">作ったもの</div>
-  <div class="tytle">お気に入り</div>
-  <div class="tytle">みんなの作品</div>
+  <div class="mine_tytle">作ったもの</div>
   <div class="mine_contents">
 <% @pages.each do |t| %>
   <div class="mine_post">
+    <div class="post_name btn btn-outline-light"><%= t.name %></div>
     <%= link_to '編集', "/pages/#{t.id}/tweets/new"%>
-    <%= t.name %>
   </div>
 <% end %>
   </div>
 </div>
-
-<div class="everyone">
-
-</div>
-
 </div>
 
 
@@ -51,5 +47,6 @@
   <li><a href="#">TIMENOTEでできること</a></li>
   <li><a href="#">よくある質問</a></li>
   <li><a href="#">TIMENOTEの感想を書く</a></li>
+  <li><%= link_to 'プロフィール編集', profile_edit_path %></li>
   <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
 </ul>

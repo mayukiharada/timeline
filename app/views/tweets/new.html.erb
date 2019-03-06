@@ -13,31 +13,32 @@
 
 <%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
 <form action="/" method="post">
+  <div class="login">
  <div class="field">
-   <%= f.label :日時 %>
-   <br><%= f.text_field :year,size: 70 %>
+   <br><%= f.label :日時 %>
+   <%= f.text_field :year,size: 30 %>
  </div>
 
  <div class="field">
-   <%= f.label :文字 %>
-   <br><%= f.text_field :body,size: 70 %>
+   <br><%= f.label :文字 %>
+   <%= f.text_field :body,size: 30 %>
  </div>
 
  <div class="field">
-   <%= f.label :画像 %>
-   <br><%= f.label :image %>
-   　　<%= f.file_field :image_name %>
+   <br><%= f.label :画像を選択 %>
+   <span class="btn btn-outline-primary btn-file">
+    ファイルを選択 <%= f.file_field :image_name%>
+</span>
  </div>
 
  <div class="field">
-   <%= f.label :説明 %>
-   <br><%= f.text_field :inform,size: 70 %>
+   <br><%= f.label :説明 %>
+   <%= f.text_field :inform,size: 30 %>
  </div>
-
-
 
  <div class="action">
-   <%= f.submit "+追加", class: "btn btn-dark" %>
+   <br><%= f.submit "追加", class: "btn btn-dark btn-block" %>
  </div>
+   </div>
  </form>
 <% end %>

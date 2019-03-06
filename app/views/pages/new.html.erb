@@ -1,14 +1,21 @@
 <%= form_for(@page, :url => { controller:'pages', action:'create'})do |f| %>
 <form action="/" method="post">
+<div class="login">
+ <div class="field">
+   <%= f.label :新しい年表を作ろう！ %>
+   <br><%= f.text_field :name, placeholder: "タイトル", size: 34 %>
+ </div>
 
  <div class="field">
-   <%= f.label :タイムライン %>
-   <br><%= f.text_field :name,size: 140 %>
+   <br><%= f.label :イメージ画像を選択 %>
+   <span class="btn btn-outline-primary btn-file">
+    ファイルを選択 <%= f.file_field :image_name%>
+</span>
  </div>
 
  <div class="action">
-   <%= f.submit %>
+   <br><%= f.submit "作成", class: "btn btn-dark btn-block"%>
  </div>
  </form>
-
+ </div>
  <% end %>

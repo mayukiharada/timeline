@@ -1,20 +1,27 @@
-<div class="content_wrapper">
+<div class="header">
+  <div class="header_left"><ul>
+    <li>←戻る</li>
+  </ul></div>
+  <div class="header_right">
+    <ul>
+      <li>共有</li>
+      <li>公開</li>
+      <li>デザインの変更</li>
+    </ul>
+  </div>
+</div>
 
-
+<div class="timeline_content_wrapper">
+	<h1 class="tytle image_name"></h1>
 <% @page.tweets.each do |t| %>
-
-<div class="contents">
-	<div class="inform"><%= t.body %><br><%= t.inform %></div>
-	<div class="year"><%= t.year %></div>
-	<div class="border"></div>
-	<div class="image_name">  <%# <%= t.image_name %>
-  <%= image_tag t.image_name.to_s, :size =>'300x275' %></div>
-</div>
-
+		<div class="timeline_content">
+			<div class="box01">
+				<div class="image_name"><%# <%= t.image_name %>
+			  <%= image_tag t.image_name.to_s, :size =>'300x300' %></div>
+				<div class="text"><%= t.body %></div>
+				<div class="year">.<%= t.year %></div>
+				<div class="inform"><%= t.inform %></div>
+			</div>
+		</div>
 <% end %>
-​
-
 </div>
-
-
-<li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
